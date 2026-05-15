@@ -1,28 +1,66 @@
-# 🖥️ POS System - Frontend
+# 🛒 POS System - Backend API
 
-A React-based frontend for a Point of Sale (POS) System. Connects to Laravel 11 REST API backend.
+A RESTful API for a Point of Sale (POS) System built with **Laravel 11**.
 
 ---
 
 ## 🚀 Tech Stack
 
-- **Framework:** React 18
-- **Language:** JavaScript
-- **Styling:** CSS
-- **HTTP Client:** Axios
-- **Routing:** React Router DOM
+- **Framework:** Laravel 11
+- **Language:** PHP
+- **Database:** MySQL
+- **API:** REST API (JSON)
+- **Auth:** Laravel Sanctum
 
 ---
 
 ## 📋 Features
 
-- ✅ Dashboard with sales statistics
-- ✅ Category Management (Add, Edit, Delete)
-- ✅ Product Management (Add, Edit, Delete)
-- ✅ Orders & Sales Management
-- ✅ Navbar with navigation
-- ✅ Connected to Laravel REST API
+- ✅ Category Management (CRUD)
+- ✅ Product Management (CRUD)
+- ✅ Order & Order Items Management
+- ✅ Dashboard Statistics
+- ✅ CORS enabled for React frontend
 
 ---
 
-## 📁 Project Structure
+## 🔧 Installation & Setup
+
+```bash
+git clone https://github.com/fayazahmedsaand123/pos-backend.git
+cd pos-backend
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
+```
+
+---
+
+## 📡 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/categories` | Get all categories |
+| POST | `/api/categories` | Create category |
+| GET | `/api/products` | Get all products |
+| POST | `/api/products` | Create product |
+| GET | `/api/orders` | Get all orders |
+| POST | `/api/orders` | Create order |
+| GET | `/api/dashboard` | Dashboard stats |
+
+---
+
+## 🔗 Frontend
+
+React frontend: [pos-frontend](https://github.com/fayazahmedsaand123/pos-frontend)
+
+---
+
+## 👨‍💻 Developer
+
+**Fayaz Ahmed**
+Full Stack Web Developer (Laravel | React | MySQL)
+📧 Fayazahmedsaand93@gmail.com
+🐙 [GitHub](https://github.com/fayazahmedsaand123)
