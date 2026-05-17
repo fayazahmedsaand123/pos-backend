@@ -7,15 +7,13 @@ use App\Models\Product;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
-{
-    public function index()
-    {
+class OrderController extends Controller {
+
+    public function index() {
         return response()->json(Order::with('items.product')->get());
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $order = Order::create([
             'total' => $request->total,
             'status' => 'completed'
@@ -38,14 +36,12 @@ class OrderController extends Controller
         return response()->json($order->load('items.product'), 201);
     }
 
-    public function destroy($id)
-    {
+    public function destroy($id) {
         Order::findOrFail($id)->delete();
         return response()->json(['message' => 'Deleted']);
     }
 
-    public function dashboard()
-    {
+    public function dashboard() {
         return response()->json([
             'total_sales' => Order::count(),
             'total_revenue' => Order::sum('total'),
